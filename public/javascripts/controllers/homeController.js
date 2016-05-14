@@ -1,5 +1,5 @@
 angular.module('goAtIt')
-  .controller('homeController', function($scope, $http, $location) {
+  .controller('homeController', function($scope, $http, $location,chatSocket) {
       var vm = this;
 
       $scope.things = [

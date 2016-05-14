@@ -1,0 +1,17 @@
+{
+  "name": "suppsData",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/anxiolydiot/kitchenSink",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-socket-io": "^0.7.0"
+  }
+}

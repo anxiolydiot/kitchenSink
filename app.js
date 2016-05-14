@@ -10,6 +10,8 @@ var routes = require('./routes/index');
 var request = require('request');
 var app = express();
 var models = require('./models');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 
 
@@ -56,9 +58,16 @@ app.use(function(err, req, res, next) {
   });
 });
 
+io.on('connect', function(socket){
+  console.log('connected');
+  socket.on('disconnect', function(){
+    console.log('disconnect');
+  });
+});
+
 
 models.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+  http.listen(PORT, function() {
     console.log("Listening on PORT " + PORT);
   });
 });

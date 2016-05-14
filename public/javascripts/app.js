@@ -12,7 +12,17 @@ $stateProvider
         },
     'main@home': {
       templateUrl: '/mainPartial.html',
-      controller: 'homeController'
+      controller: 'homeController',
+      css: {
+        href: 'mainPartialStyle.css',
+        rel: 'stylesheet',
+        type: 'text/css',
+        media: false,
+        persist: false,
+        preload: false,
+        bustCache: false,
+        weight: 0
+      }
 
     },
 

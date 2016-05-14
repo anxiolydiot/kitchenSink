@@ -1,5 +1,5 @@
-angular.module('goAtIt', ['ui.router','ngTable', 'ngMap'])
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',function($stateProvider, $urlRouterProvider, $locationProvider) {
+angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS'])
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$cssProvider',function($stateProvider, $urlRouterProvider, $locationProvider,$cssProvider) {
 $urlRouterProvider.otherwise('/');
 
 $stateProvider
@@ -27,5 +27,13 @@ $stateProvider
 
 
 $locationProvider.html5Mode(true);
+
+  angular.extend($cssProvider.defaults, {
+    container: 'head',
+    method: 'append',
+    persist: false,
+    preload: false,
+    bustCache: false
+  });
 
 }]);

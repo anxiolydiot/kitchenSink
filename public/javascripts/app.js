@@ -13,15 +13,16 @@ $stateProvider
     'main@home': {
       templateUrl: '/mainPartial.html',
       controller: 'homeController',
-      css: {
-        href: 'mainPartialStyle.css',
+      css: 
+      {
+        href: '/stylesheets/mainPartialStyle.css',
         rel: 'stylesheet',
         type: 'text/css',
-        media: false,
-        persist: false,
-        preload: false,
-        bustCache: false,
-        weight: 0
+        // media: false,
+        persist: true,
+        preload: true,
+        // bustCache: false,
+        // weight: 0
       }
 
     },

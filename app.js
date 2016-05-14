@@ -9,7 +9,7 @@ var _ = require('lodash');
 var routes = require('./routes/index');
 var request = require('request');
 var app = express();
-
+var models = require('./models');
 
 
 
@@ -57,12 +57,11 @@ app.use(function(err, req, res, next) {
 });
 
 
-
+models.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("Listening on PORT " + PORT);
   });
-
-
+});
 
 
 module.exports = app;

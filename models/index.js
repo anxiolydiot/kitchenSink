@@ -12,7 +12,7 @@ if(process.env.NODE_ENV === 'production') {
 }
 else {
   // LOCAL DB
-  var sequelize = new Sequelize('johnny_db', 'root');
+  var sequelize = new Sequelize('clash_db', 'root');
 }
 
 

@@ -1,4 +1,4 @@
-angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io'])
+angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal'])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$cssProvider',function($stateProvider, $urlRouterProvider, $locationProvider,$cssProvider) {
 $urlRouterProvider.otherwise('/');
 
@@ -37,6 +37,10 @@ $stateProvider
         persist: true,
         preload: true,
       }
+    },
+    'modal@home':{
+      templateUrl: '/angModal.html',
+      controller: 'homeController',
     }
 
   }

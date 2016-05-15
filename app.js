@@ -65,7 +65,7 @@ io.on('connect', function(socket){
   });
   socket.on('message', function(data){
     io.emit('message', {message: data.message});
-    console.log(data.message)
+    console.log(data.message);
   });
 });
 

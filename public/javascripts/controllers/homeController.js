@@ -10,6 +10,8 @@ angular.module('goAtIt')
 
       ];
 
+
+
       function Clash(who, when, what, where) {
       this.who = who;
       this.when = when;
@@ -17,8 +19,17 @@ angular.module('goAtIt')
       this.where = where;
 }
 
-    var any = new Clash (//read,//read,//read,//read
-    );
+      var any = new Clash (//read,//read,//read,//read
+     );
+
+      $scope.messages =[];
+
+      chatSocket.on('message', function(data){
+          $scope.messages.push(data.message);
+
+      });
+
+        
 
 
 });

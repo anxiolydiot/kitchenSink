@@ -1,5 +1,5 @@
 angular.module('goAtIt')
-  .controller('homeController', function($scope, $http, $location,chatSocket) {
+  .controller('homeController', function($scope, $http, $location,angModal) {
       var vm = this;
 
       $scope.things = [
@@ -22,6 +22,7 @@ angular.module('goAtIt')
       var any = new Clash (//read,//read,//read,//read
      );
 
+      angModal.showModal = angModal.activate;
  
         
 

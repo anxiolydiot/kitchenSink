@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" crossorigin="anonymous">
   <!-- ngTable css -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/0.8.3/ng-table.css" media="screen" title="no title" charset="utf-8">
+   <!-- custom css, must of this is done by angularCSS in other stylesheets -->
    <link rel = "stylesheet" href="/stylesheets/style.css" >
+   <!-- optional stylesheet for bt-ford angularCSS -->
+  <link rel = "stylesheet" href="/javascripts/angular-modal/modal.css">
   <base href="/" />
 </head>
 <body>
@@ -70,8 +73,14 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-route
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"> </script>
 <!-- socket io CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.min.js"> </script>
+<!-- js for bt-ford angular socket-io -->
 <script src="/javascripts/angular-socket-io/socket.js"> </script>
+<!-- js for bt-ford angular modal -->
+<script src="/javascripts/angular-modal/modal.js"> </script>
+<!-- factory for bt-ford angular socket-io -->
 <script src="/javascripts/services/chatSocket.js"> </script>
+<!-- factory for bt-ford angular modal -->
+<script src="/javascripts/services/angModal.js"> </script>
 
 </body>
 </html>

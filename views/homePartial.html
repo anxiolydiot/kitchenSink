@@ -3,7 +3,6 @@
       <div  class="col s4" ng-repeat='thing in things | filter:query'>
        <h1> {{thing.name}} </h1>
        <h3> {{thing.type}} </h3>
-       <h4> {{messages}} </h4>
       </div>
       <div class="col s4">
        
@@ -12,6 +11,13 @@
       <div ui-view= "main"> </div>
         
       </div>
-
     </div>
-          
+
+
+    <div class ="row">
+
+    <div ui-view = "chat"> </div>
+    </div>
+
+
+   

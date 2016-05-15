@@ -22,13 +22,7 @@ angular.module('goAtIt')
       var any = new Clash (//read,//read,//read,//read
      );
 
-      $scope.messages =[];
-
-      chatSocket.on('message', function(data){
-          $scope.messages.push(data.message);
-
-      });
-
+ 
         
 
 

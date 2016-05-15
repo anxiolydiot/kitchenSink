@@ -63,13 +63,10 @@ io.on('connect', function(socket){
   socket.on('disconnect', function(){
     console.log('disconnect');
   });
-  var i = 0;
-setInterval(function(){
-  socket.emit('message', {
-    message: i
+  socket.on('message', function(data){
+    io.emit('message', {message: data.message});
+    console.log(data.message)
   });
-  i++;
-}, 1000);
 });
 
 

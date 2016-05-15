@@ -26,6 +26,10 @@ $stateProvider
       }
 
     },
+    'chat@home': {
+      templateUrl: '/chatPartial.html',
+      controller: 'chatController'
+    }
 
   }
 

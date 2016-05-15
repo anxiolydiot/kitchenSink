@@ -28,7 +28,15 @@ $stateProvider
     },
     'chat@home': {
       templateUrl: '/chatPartial.html',
-      controller: 'chatController'
+      controller: 'chatController',
+      css: 
+      {
+        href: '/stylesheets/chatPartialStyle.css',
+        rel: 'stylesheet',
+        type: 'text/css',
+        persist: true,
+        preload: true,
+      }
     }
 
   }

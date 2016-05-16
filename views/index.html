@@ -37,8 +37,18 @@
 
 
   <div ui-view= ""> </div>
-  
 
+  <div drag-container="model" mime-type="text/whatever">
+    <!-- Containter that is draggable -->
+</div>
+
+<div drop-container accepts="['text/x-plunker-file']">
+    <div drop-target="left" on-drop="dropL(data)"></div>
+    <div drop-target="right" on-drop="dropR(data)"></div>
+
+    <!-- You can put any markup here -->
+</div>
+  
 
 
 
@@ -48,6 +58,8 @@
 
 <!-- jQuery cdn -->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<!-- jQuery  UI cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 <!-- angular cdn -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js'> </script>
 <!-- ui router cdn -->
@@ -81,6 +93,9 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-route
 <script src="/javascripts/services/chatSocket.js"> </script>
 <!-- factory for bt-ford angular modal -->
 <script src="/javascripts/services/angModal.js"> </script>
+<!-- angular drag drop animate -- >
+
+
 
 </body>
 </html>

@@ -3,19 +3,34 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "browserify app.js -o bundle.js"
   },
   "dependencies": {
+    "angular-drag-drop": "^2.0.6",
+    "autoprefixer-loader": "^3.2.0",
     "bcryptjs": "^2.3.0",
     "body-parser": "~1.15.1",
+    "browserify": "^13.0.1",
     "cookie-parser": "~1.4.1",
+    "css-loader": "^0.23.1",
     "debug": "~2.2.0",
+    "exports-loader": "^0.6.3",
     "express": "~4.13.1",
+    "file-loader": "^0.8.5",
+    "imports-loader": "^0.6.5",
     "jade": "~1.11.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "morgan": "~1.7.0",
     "mysql": "^2.10.2",
+    "pg": "^4.5.5",
     "sequelize": "^3.23.1",
     "serve-favicon": "~2.3.0",
-    "socket.io": "^1.4.6"
+    "socket.io": "^1.4.6",
+    "url-loader": "^0.5.7"
+  },
+  "devDependencies": {
+    "browserify": "~13.0.1"
   }
 }

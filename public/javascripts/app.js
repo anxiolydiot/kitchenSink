@@ -1,4 +1,4 @@
-angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal'])
+angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal', 'firebase'])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$cssProvider',function($stateProvider, $urlRouterProvider, $locationProvider,$cssProvider) {
 $urlRouterProvider.otherwise('/');
 

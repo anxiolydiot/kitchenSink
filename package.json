@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "angular-drag-drop": "^2.0.6",
+    "angular-konami": "^0.2.0",
     "autoprefixer-loader": "^3.2.0",
     "bcryptjs": "^2.3.0",
     "body-parser": "~1.15.1",
     "browserify": "^13.0.1",
+    "bufferutil": "^1.2.1",
     "cookie-parser": "~1.4.1",
     "css-loader": "^0.23.1",
     "debug": "~2.2.0",
@@ -25,12 +27,15 @@
     "morgan": "~1.7.0",
     "mysql": "^2.10.2",
     "pg": "^4.5.5",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^3.23.1",
     "serve-favicon": "~2.3.0",
     "socket.io": "^1.4.6",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "utf-8-validate": "^1.2.1"
   },
   "devDependencies": {
-    "browserify": "~13.0.1"
+    "browserify": "~13.0.1",
+    "gulp": "^3.9.1"
   }
 }

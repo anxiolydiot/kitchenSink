@@ -1,6 +1,10 @@
-angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal', 'firebase'])
+angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal', ])
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$cssProvider',function($stateProvider, $urlRouterProvider, $locationProvider,$cssProvider) {
 $urlRouterProvider.otherwise('/');
+
+
+
+// $firebaseRefProvider.registerUrl('https://goatit.firebaseio.com');
 
 $stateProvider
 .state('home', {
@@ -45,12 +49,12 @@ $stateProvider
 
   }
 
-})
-.state('signup', {
-  url: '/signup',
-  templateUrl: '/partial-signUp',
-  controller: '/signUpController' 
 });
+// .state('firebase', {
+//   url: '/firebase',
+//   templateUrl: '/firebasePartial.html',
+//   controller: 'fireBaseController' 
+// });
 
 
 $locationProvider.html5Mode(true);

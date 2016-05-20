@@ -11,7 +11,12 @@
    <link rel = "stylesheet" href="/stylesheets/style.css" >
    <!-- optional stylesheet for bt-ford angularCSS -->
   <link rel = "stylesheet" href="/javascripts/angular-modal/modal.css">
+  <!--<script src="https://www.gstatic.com/firebasejs/3.0.0/firebase.js"></script> -->
+  <!-- <script type='text/javascript' src='/javascripts/fireBaseInit.js'> </script> -->
   <base href="/" />
+
+
+
 </head>
 <body>
 
@@ -38,16 +43,49 @@
 
   <div ui-view= ""> </div>
 
-  <div drag-container="model" mime-type="text/whatever">
-    <!-- Containter that is draggable -->
-</div>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-<div drop-container accepts="['text/x-plunker-file']">
+    <!-- Header section containing title -->
+    <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+        <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+          <h3>Storage Quickstart</h3>
+        </div>
+      </div>
+    </header>
+
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+
+        <!-- Container for the demo -->
+        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+            <h2 class="mdl-card__title-text">Upload a file</h2>
+          </div>
+          <div class="mdl-card__supporting-text mdl-color-text--grey-600" id="messagesDiv">
+            <p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>
+            <h6>Choose File</h6>
+            <input type="file" id="file" name="file"/>
+            <h6>File URL:</h6>
+            <span id="linkbox"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+ <!--  <div drag-container="model" mime-type="text/whatever">
+    <! Containter that is draggable -->
+ <!--</div> -->
+
+<!-- <div drop-container accepts="['text/x-plunker-file']">
     <div drop-target="left" on-drop="dropL(data)"></div>
     <div drop-target="right" on-drop="dropR(data)"></div>
 
-    <!-- You can put any markup here -->
-</div>
+    You can put any markup here -->
+<!-- </div> -->
+
+
   
 
 
@@ -61,7 +99,7 @@
 <!-- jQuery  UI cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 <!-- angular cdn -->
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js'> </script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js'> </script>
 <!-- ui router cdn -->
 <script type="text/javascript" src="
 https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
@@ -70,12 +108,18 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-route
 <!-- materialize js cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js" crossorigin="anonymous"></script>
 <!-- fireBase CDN -- >
-<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+
+<!-- <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script> -->
 <!-- angular-fire CDN -->
-<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+<!--<script type='text/javascript' src='/javascripts/fireBaseMain.js'> </script> -->
+<!-- <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script> --> 
 <!-- main app for angular configuration -->
 <script type='text/javascript' src='/javascripts/app.js'> </script>
-<!-- controller for location partial -->
+<!-- firebase controller -->
+<!--<script type='text/javascript' src='/javascripts/controllers/fireBaseController.js'> </script> -->
+<!--home Controller--> 
 <script type='text/javascript' src='/javascripts/controllers/homeController.js'> </script> 
 <!-- chat controller -->
 <script type='text/javascript' src='/javascripts/controllers/chatController.js'> </script> 

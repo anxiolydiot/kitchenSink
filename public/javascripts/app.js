@@ -1,4 +1,5 @@
-angular.module('goAtIt', ['ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal', ])
+angular.module('goAtIt', ['ui.router', 'firebase','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal'])
+
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$cssProvider',function($stateProvider, $urlRouterProvider, $locationProvider,$cssProvider) {
 $urlRouterProvider.otherwise('/');
 
@@ -45,16 +46,21 @@ $stateProvider
     'modal@home':{
       templateUrl: '/angModal.html',
       controller: 'homeController',
-    }
+    },
+    // 'fireBase@home':{
+    //   templateUrl: '/fireBasePartial.html',
+    //   controller: 'fireBaseController'
+
+    // }
 
   }
 
+})
+.state('firebase', {
+  url: '/firebase',
+  templateUrl: '/firebasePartial.html',
+  controller: 'fireBaseController' 
 });
-// .state('firebase', {
-//   url: '/firebase',
-//   templateUrl: '/firebasePartial.html',
-//   controller: 'fireBaseController' 
-// });
 
 
 $locationProvider.html5Mode(true);

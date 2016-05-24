@@ -12,7 +12,6 @@ var app = express();
 var models = require('./models');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var Firebase = require('firebase');
 
 
 // uncomment after placing your favicon in /public

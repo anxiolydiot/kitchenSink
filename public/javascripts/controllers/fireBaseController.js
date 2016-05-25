@@ -1,27 +1,44 @@
-angular.module('goAtIt', ['firebase'])
-  .controller('fireBaseController', function($scope, $http, $location, $firebaseObject) {
+angular.module('goAtIt')
 
 
-      console.log($firebaseObject);
+  .controller('fireBaseController', function($scope, $http, $location, $firebaseArray, $firebaseRef) {
+
+    var vm = this;
 
 
- var ref = new Firebase("https://tapiocasushi.firebaseio.com/whatever");
+    $scope.messages = $firebaseArray($firebaseRef.messages);
+
+    $scope.addMessage = function (){
+
+      $scope.messages.$add({
+          text: $scope.newMessageText
+
+      });
+    };
 
 
-   var syncObject = $firebaseObject(ref);
-  // synchronize the object with a three-way data binding
-  // click on `index.html` above to see it used in the DOM!
-  syncObject.$bindTo($scope, "data");
+    // vm.messages = $firebaseArray($firebaseRef.messages);
 
-  });
+    // vm.addMessage = function (){
+
+    //   vm.messages.$add({
+    //       text: $scope.newMessageText
+
+    //   });
+    // };
 
 
+
+  // firebase.initializeApp(config);
+
+
+  // var ref = new Firebase("https://goatit.firebaseio.com/messages");
 
   // var rootRef = Firebase.database().ref();
   // create a synchronized array
-  // $scope.messages = $firebaseArray(firebaseRef.default);
-  // // add new items to the array
-  // // the message is automatically added to our Firebase database!
+  // $scope.messages = $firebaseArray(firebaseRef.messages);
+  // add new items to the array
+  // the message is automatically added to our Firebase database!
   // $scope.addMessage = function() {
   //   $scope.messages.$add({
   //     text: $scope.newMessageText
@@ -41,3 +58,4 @@ angular.module('goAtIt', ['firebase'])
 
         
      
+});

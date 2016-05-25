@@ -13,6 +13,7 @@
   <link rel = "stylesheet" href="/javascripts/angular-modal/modal.css">
   <!--<script src="https://www.gstatic.com/firebasejs/3.0.0/firebase.js"></script> -->
   <!-- <script type='text/javascript' src='/javascripts/fireBaseInit.js'> </script> -->
+
   <base href="/" />
 
 
@@ -99,13 +100,15 @@
 
 
 
-
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js'> </script>
+  <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script> 
 <!-- jQuery cdn -->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <!-- jQuery  UI cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 <!-- angular cdn -->
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js'> </script>
+
 <!-- ui router cdn -->
 <script type="text/javascript" src="
 https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
@@ -118,21 +121,35 @@ https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-route
 
 
 
+
 <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 <!-- angular-fire CDN -->
 
 <!--<script type='text/javascript' src='/javascripts/fireBaseMain.js'> </script> -->
 <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script> 
 
+<!-- angular-fire CDN -->
+
+<!--<script type='text/javascript' src='/javascripts/fireBaseMain.js'> </script> -->
+
 
 <!-- main app for angular configuration -->
-<script type='text/javascript' src='/javascripts/app.js'> </script>
+
 <!-- firebase controller -->
-<script type='text/javascript' src='/javascripts/controllers/fireBaseController.js'> </script> 
+
+
+
+<script type='text/javascript' src='/javascripts/app.js'> </script>
+<script type='text/javascript' src='/javascripts/appRoutes.js'> </script>
+
+
 <!--home Controller--> 
+<script type='text/javascript' src='/javascripts/controllers/fireBaseController.js'> </script> 
 <script type='text/javascript' src='/javascripts/controllers/homeController.js'> </script> 
 <!-- chat controller -->
 <script type='text/javascript' src='/javascripts/controllers/chatController.js'> </script> 
+
+<script type='text/javascript' src='/javascripts/controllers/fireBaseController.js'> </script> 
 <!--async cdn -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.js'> </script>
 <!-- angular google maps -->

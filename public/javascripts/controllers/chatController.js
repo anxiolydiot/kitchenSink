@@ -1,8 +1,16 @@
 angular.module('goAtIt')
-  .controller('chatController', function($scope, $http, $location,chatSocket) {
+  .controller('chatController', function($scope, $http, $location,chatSocket, say) {
+      var chatCtrl = this;
+
+      chatCtrl.say = say;
+
       chatSocket.connect();
 
       $scope.messages =[];
+
+      $http.get ('/getMsg').then(function(messages) {
+          console.log(messages);
+    });
      
 
       $scope.sendMessage = function(msg){

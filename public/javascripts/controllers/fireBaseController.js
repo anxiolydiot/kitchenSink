@@ -1,9 +1,17 @@
+
+
 angular.module('goAtIt')
 
 
-  .controller('fireBaseController', function($scope, $http, $location, $firebaseArray, $firebaseRef) {
 
-    var vm = this;
+
+  .controller('fireBaseController', function($scope, $http, $location, $firebaseArray, $firebaseRef, say) {
+
+    var fireBaseCtrl = this;
+
+    fireBaseCtrl.say = say;
+
+    // var auth = $firebaseAuth($firebaseRef);
 
 
     $scope.messages = $firebaseArray($firebaseRef.messages);

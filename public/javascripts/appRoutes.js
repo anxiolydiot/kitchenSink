@@ -39,7 +39,7 @@ $stateProvider
         },
     'main@home': {
       templateUrl: '/mainPartial.html',
-      controller: 'homeController',
+      controller: 'homeController as homeCtrl',
       css: 
       {
         href: '/stylesheets/mainPartialStyle.css',
@@ -55,7 +55,7 @@ $stateProvider
     },
     'chat@home': {
       templateUrl: '/chatPartial.html',
-      controller: 'chatController',
+      controller: 'chatController as chatCtrl',
       css: 
       {
         href: '/stylesheets/chatPartialStyle.css',
@@ -76,7 +76,12 @@ $stateProvider
 .state('firebase', {
   url: '/firebase',
   templateUrl: '/firebasePartial.html',
-  controller: 'fireBaseController' 
+  controller: 'fireBaseController as fireBaseCtrl'
+  // resolve: {
+  //     user: function($firebaseAuthService) {
+  //       return $firebaseAuthService.$waitForAuth();
+  //     }
+  //   } 
 });
 
 

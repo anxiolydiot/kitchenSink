@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var PORT = 4000;
+var Sequelize = require("sequelize");
 var _ = require('lodash');
 var routes = require('./routes/index');
 var request = require('request');
@@ -12,7 +13,7 @@ var app = express();
 var models = require('./models');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
+var Message = require('./models/Message.js');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -62,8 +63,19 @@ io.on('connect', function(socket){
     console.log('disconnect');
   });
   socket.on('message', function(data){
+    console.log('this is data:' +  data);
     io.emit('message', {message: data.message});
     console.log(data.message);
+// var newMessage = new Message({message:data.message});
+// newMessage.create({message: data.message}, function (err){
+
+//   if(err){
+//     console.log (err);
+//   } else{
+//     console.log('message saved');
+//   }
+// });
+
   });
 });
 

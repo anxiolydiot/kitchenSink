@@ -27,11 +27,15 @@
   </div>
 
   <div class  = "row">
-  <input type = "text" ng-model = "chatCtrl.say.message" />
+  <input type = "text" ng-model = "chatCtrl.say.message" ng-change = "changeThis()" />
 <div ng-class = "chatCtrl.say.message">
 {{chatCtrl.say.message}}
 </div>
+<!-- <input type = "text" ng-model = "chatCtrl.say.aThing.cake" ng-change = "changeThis()" /> -->
+<div>
+{{chatCtrl.say.aThing.cake}}
+</div>
+<div>
+{{chatCtrl.say.aThing.toast}}
 </div>
 <div ui-sref ="firebase"> Show me something else now </div>
-
-  

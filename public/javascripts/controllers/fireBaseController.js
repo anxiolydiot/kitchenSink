@@ -19,7 +19,7 @@ angular.module('goAtIt')
     $scope.addMessage = function (){
 
       $scope.messages.$add({
-          text: $scope.newMessageText
+          text: $scope.newMessageText + say.message
 
       });
     };

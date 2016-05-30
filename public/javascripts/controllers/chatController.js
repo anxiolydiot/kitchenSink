@@ -6,6 +6,24 @@ angular.module('goAtIt')
 
       chatSocket.connect();
 
+      $scope.changeThis = function(){
+        say.whoThis.tellMe().then(function(){
+            say.whoThat.tellMe();
+
+        });
+        
+
+        say.aThing.pudding= "{{chatCtrl.say.message}}";
+        // say.aThing.cake= "{{chatCtrl.say.cake}}";
+        // say.aThing.toast = "{{chatCtrl.say.toast}}";
+
+
+
+
+
+
+      };
+
       $scope.messages =[];
 
       $http.get ('/getMsg').then(function(messages) {

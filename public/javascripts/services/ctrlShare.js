@@ -1,7 +1,20 @@
 angular.module('goAtIt')
-.service('say', function Say() {
+.service('say', function Say($firebaseArray, $firebaseRef) {
 
   var say = this;
+
+  say.messages = $firebaseArray($firebaseRef.messages);
+
+    say.addMessage = function  (){
+
+      say.messages.$add({
+          text: this.newMessageText
+
+
+        });
+    };
+
+
 
   say.aThing= {
     pudding: '=',
@@ -12,6 +25,7 @@ angular.module('goAtIt')
       this.x = x;
       this.y = y;
       this.z= z;
+      this.topping = say.aThing.aNew;
   
   
     },
@@ -22,9 +36,15 @@ angular.module('goAtIt')
     },
     yThis  : function(){
       say.aThing.toast = ('who:' + this.who + 'when:' + this.when +  'what:' + this.what + 'pudding:');
+    },
+    aNew : function (){
+      (say.aThing).prototype.syrup = "maple";
+      return this;
     }
 
   };
+
+
 
   
   say.message = "There are too many kinds of Oreos";

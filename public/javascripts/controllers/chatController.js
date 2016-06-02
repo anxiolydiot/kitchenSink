@@ -6,11 +6,11 @@ angular.module('goAtIt')
 
       chatSocket.connect();
 
-      $scope.changeThis = function(){
-        say.whoThis.tellMe().then(function(){
-            say.whoThat.tellMe();
+      // chatCtrl.changeThis = function(){
+      //   say.whoThis.tellMe().then(function(){
+      //       say.whoThat.tellMe();
 
-        });
+      //   });
         
 
         say.aThing.pudding= "{{chatCtrl.say.message}}";
@@ -22,7 +22,7 @@ angular.module('goAtIt')
 
 
 
-      };
+      // };
 
       $scope.messages =[];
 

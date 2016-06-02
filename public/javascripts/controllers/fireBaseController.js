@@ -5,24 +5,29 @@ angular.module('goAtIt')
 
 
 
-  .controller('fireBaseController', function($scope, $http, $location, $firebaseArray, $firebaseRef, say) {
+  .controller('fireBaseController', function($scope, $http, $location, $firebaseArray, $firebaseRef, say, $controller) {
 
     var fireBaseCtrl = this;
+    // var chatC = $controller('chatController', {$scope: $scope});
 
-    fireBaseCtrl.say = say;
+    // fireBaseCtrl.say = say;
 
     // var auth = $firebaseAuth($firebaseRef);
 
+    $scope.messages = say.messages;
+    $scope.addMessage = say.addMessage;
 
-    $scope.messages = $firebaseArray($firebaseRef.messages);
 
-    $scope.addMessage = function (){
 
-      $scope.messages.$add({
-          text: $scope.newMessageText + say.message
+    // $scope.messages = $firebaseArray($firebaseRef.messages);
 
-      });
-    };
+    // $scope.addMessage = function (){
+
+    //   $scope.messages.$add({
+    //       text: $scope.newMessageText
+
+    //   });
+    // };
 
 
     // vm.messages = $firebaseArray($firebaseRef.messages);

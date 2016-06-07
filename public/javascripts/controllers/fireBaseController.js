@@ -16,7 +16,7 @@ angular.module('goAtIt')
 
     $scope.messages = say.messages;
     $scope.addMessage = say.addMessage;
-
+    $scope.addFbMessage = say.addFbMessage;
 
 
     // $scope.messages = $firebaseArray($firebaseRef.messages);

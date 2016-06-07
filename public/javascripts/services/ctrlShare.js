@@ -6,13 +6,27 @@ angular.module('goAtIt')
   say.messages = $firebaseArray($firebaseRef.messages);
 
     say.addMessage = function  (){
-
+        console.log('add messages ran');
       say.messages.$add({
           text: this.newMessageText
 
 
         });
+
+    // say.addFbMessage = function(){
+
+
+
+    //   say.messages.$add({
+    //     text: this.msg
+
+    //   });
+      console.log("fbmessages ran");
+      console.log(text);
+      console.log(this.msg);
+
     };
+    // };
 
 
 

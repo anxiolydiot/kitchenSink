@@ -19,7 +19,17 @@ angular.module('goAtIt')
 
 
 
+        $scope.toFirebase = say.messages;
+        $scope.addMessage = say.addMessage;
+        $scope.addFbMessage = say.addFbMessage;
 
+        // $scope.$watch('msg', function (x){
+        //   $scope.id = x;
+
+
+        // });
+
+          
 
 
       // };
@@ -39,7 +49,13 @@ angular.module('goAtIt')
 
      chatSocket.on('message', function (data){
           $scope.messages.push(data.message);
+          // $scope.toFirebase.push(data.message);
           console.log($scope.messages);
+          console.log($scope.toFirebase);
+          say.messages.$add({
+            text: data.message
+
+            });
 
       });
 

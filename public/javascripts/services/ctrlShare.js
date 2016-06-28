@@ -7,6 +7,7 @@ angular.module('goAtIt')
 
     say.addMessage = function  (){
         console.log('add messages ran');
+      
       say.messages.$add({
           text: this.newMessageText
 
@@ -22,8 +23,8 @@ angular.module('goAtIt')
 
     //   });
       console.log("fbmessages ran");
-      console.log(text);
-      console.log(this.msg);
+
+
 
     };
     // };
@@ -40,13 +41,13 @@ angular.module('goAtIt')
       this.y = y;
       this.z= z;
       this.topping = say.aThing.aNew;
-  
-  
+
+
     },
     tellMe : function(){
       say.aThing.cake = ('who:' + this.who + 'when:' + this.when +  'what:' + this.what);
       say.aThing.doughnut = ('who:' + this.x + 'when:' + this.y +  'what:' + this.z);
-    
+
     },
     yThis  : function(){
       say.aThing.toast = ('who:' + this.who + 'when:' + this.when +  'what:' + this.what + 'pudding:');
@@ -60,7 +61,7 @@ angular.module('goAtIt')
 
 
 
-  
+
   say.message = "There are too many kinds of Oreos";
 
   var whoThis = Object.create(say.aThing);

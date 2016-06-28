@@ -1,5 +1,4 @@
 
-angular.module('goAtIt', ['firebase','ui.router','ngTable', 'ngMap', 'angularCSS','btford.socket-io','btford.modal'])
+angular.module('goAtIt', ['firebase','ui.router','ngTable', 'angularCSS','btford.socket-io','btford.modal'])
 
 .constant('FirebaseUrl', 'https://tapiocasushi.firebaseio.com/');
-

@@ -9,14 +9,14 @@ var PORT = 4000;
 var Sequelize = require("sequelize");
 var _ = require('lodash');
 var routes = require('./routes/index');
+var cheerio = require('cheerio');
 var request = require('request');
 var app = express();
 var models = require('./models');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Message = require('./models/Message.js');
-var cheerio = require('cheerio');
-var request = require('request');
+
 
 
 

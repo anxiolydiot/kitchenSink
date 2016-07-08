@@ -1,4 +1,4 @@
-
+module.exports =
 angular.module('goAtIt')
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$cssProvider', '$firebaseRefProvider',function($stateProvider, $urlRouterProvider, $locationProvider,$cssProvider, $firebaseRefProvider, FirebaseUrl) {
 $urlRouterProvider.otherwise('/');
@@ -40,7 +40,7 @@ $stateProvider
     'main@home': {
       templateUrl: '/mainPartial.html',
       controller: 'homeController as homeCtrl',
-      css: 
+      css:
       {
         href: '/stylesheets/mainPartialStyle.css',
         rel: 'stylesheet',
@@ -56,7 +56,7 @@ $stateProvider
     'chat@home': {
       templateUrl: '/chatPartial.html',
       controller: 'chatController as chatCtrl',
-      css: 
+      css:
       {
         href: '/stylesheets/chatPartialStyle.css',
         rel: 'stylesheet',
@@ -81,7 +81,7 @@ $stateProvider
   //     user: function($firebaseAuthService) {
   //       return $firebaseAuthService.$waitForAuth();
   //     }
-  //   } 
+  //   }
 });
 
 

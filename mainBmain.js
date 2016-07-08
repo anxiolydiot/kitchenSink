@@ -1,0 +1,17 @@
+require('angular');
+require('angular-socket-io');
+require('angular-modal');
+require('angular-animate');
+require('angularfire');
+require('request');
+var req = require('./public/javascripts/req.js');
+var app = require('./public/javascripts/app.js');
+var appRoutes = require('./public/javascripts/appRoutes.js');
+var angModal = require('./public/javascripts/services/angModal.js');
+var chatSocket = require('./public/javascripts/services/chatSocket.js');
+var ctrlShare = require('./public/javascripts/services/ctrlShare.js');
+var ranFactory = require('./public/javascripts/services/ranFactory.js');
+var testDir  = require('./public/javascripts/services/testDir.js');
+var fireBaseController = require('./public/javascripts/controllers/fireBaseController.js');
+var homeController = require('./public/javascripts/controllers/homeController.js');
+var chatController = require('./public/javascripts/controllers/chatController.js');

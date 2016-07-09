@@ -84,7 +84,6 @@ io.on('connect', function(socket){
 
 
 
-
 models.sequelize.sync().then(function() {
   http.listen(PORT, function() {
     console.log("Listening on PORT " + PORT);

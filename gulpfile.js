@@ -1,8 +1,10 @@
 var browserify = require('browserify'),
-gulp = require('gulp'),
-fs = require('fs');
+  gulp = require('gulp'),
+  fs = require('fs'),
+  expect = require('gulp-expect-file'),
+  gulpUtil = require('gulp-util')
 
-gulp.task('exposeBundle', function() {
+gulp.task('exposeLibs', function() {
 
 browserify()
     .require(require.resolve('./node_modules/angular/angular.js'), { expose: 'angular' })
@@ -11,35 +13,27 @@ browserify()
     .require(require.resolve('./node_modules/angular-modal/modal.js'), {expose: 'angular-modal'})
     .require(require.resolve('./node_modules/angularfire/dist/angularfire.js'), {expose: 'angularfire'})
     .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    .require(require.resolve('./public/javascripts/req.js'), {expose: 'req'})
-    .require(require.resolve('./public/javascripts/app.js'), {expose: 'app'})
-    // .require(require.resolve('./public/javascripts/appRoutes.js'), {expose: 'appRoutes'})
-    // .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    // .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    // .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    // .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    // .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    // .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    //continue listing shimed paths for exposure
+    .on('error', gulpUtil.log)
     .bundle(function(err, libs) {
-        fs.writeFile('./dist/libs.js', libs);
+        fs.writeFile('./public/javascripts/libs.js', libs);
     });
 
+
+
+
 browserify()
-    .require(require.resolve('./mainBmain.js'))
+    .require(require.resolve('./concatMain.js'))
     .external('angular')
     .external('firebase')
     .external('angular-socket-io')
     .external('angular-modal')
     .external('angularfire')
     .external('request')
-    .external('req')
-    .external('app')
-    // .external('appRoutes')
-
+    .on('error', gulpUtil.log)
     .bundle(function(err, main) {
         fs.writeFile('./public/javascripts/mainB.js', main);
     });
 });
 
-gulp.task('default', ['exposeBundle']);
+
+gulp.task('default', ['exposeLibs']);

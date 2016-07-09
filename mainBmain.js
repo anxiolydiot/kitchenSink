@@ -1,9 +1,9 @@
-require('angular');
-require('angular-socket-io');
-require('angular-modal');
-require('angular-animate');
-require('angularfire');
-require('request');
+// require('angular');
+// require('angular-socket-io');
+// require('angular-modal');
+// require('angular-animate');
+// require('angularfire');
+// require('request');
 var req = require('./public/javascripts/req.js');
 var app = require('./public/javascripts/app.js');
 var appRoutes = require('./public/javascripts/appRoutes.js');

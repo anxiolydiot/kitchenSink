@@ -1,39 +1,26 @@
-var browserify = require('browserify'),
-  gulp = require('gulp'),
-  fs = require('fs'),
-  expect = require('gulp-expect-file'),
-  gulpUtil = require('gulp-util')
+var libs = require('./dist/libs.js'),
+source = require('vinyl-source-stream'),
+gulpUtil = require('gulp-util'),
+fs = require('fs'),
+gulp = require('gulp'),
+browserify = require('browserify');
 
-gulp.task('exposeLibs', function() {
 
+gulp.task('a', function() {
 browserify()
-    .require(require.resolve('./node_modules/angular/angular.js'), { expose: 'angular' })
-    .require(require.resolve('./node_modules/firebase/lib/firebase-node.js'), { expose: 'firebase' })
-    .require(require.resolve('./node_modules/angular-socket-io/socket.js'), {expose: 'angular-socket-io'})
-    .require(require.resolve('./node_modules/angular-modal/modal.js'), {expose: 'angular-modal'})
-    .require(require.resolve('./node_modules/angularfire/dist/angularfire.js'), {expose: 'angularfire'})
-    .require(require.resolve('./node_modules/browser-request/index.js'), {expose: 'request'})
-    .on('error', gulpUtil.log)
+    .pipe(source('./dist/libs.js').on('error', gulpUtil.log))
     .bundle(function(err, libs) {
-        fs.writeFile('./public/javascripts/libs.js', libs);
+        fs.writeFile('./dist/libs.js', libs);
     });
 
 
-
-
-browserify()
-    .require(require.resolve('./concatMain.js'))
-    .external('angular')
-    .external('firebase')
-    .external('angular-socket-io')
-    .external('angular-modal')
-    .external('angularfire')
-    .external('request')
-    .on('error', gulpUtil.log)
+browserify({
+    entries: ['./app.js', "./public/javascripts/services/*.js"]
+})
+    .external(libs)
     .bundle(function(err, main) {
-        fs.writeFile('./public/javascripts/mainB.js', main);
+        fs.writeFile('./dist/main.js', main);
     });
 });
 
-
-gulp.task('default', ['exposeLibs']);
+gulp.task('default', ['a']);
